@@ -4,8 +4,6 @@ import org.junit.*;
 
 public class CalculatorServiceTest {
 
-    int counter = 0;
-
     @BeforeClass
     public static void init() {
         System.out.println("Before all test cases");
@@ -13,8 +11,7 @@ public class CalculatorServiceTest {
 
     @Before
     public void beforeEach() {
-        counter = 0;
-        System.out.println("Before each test case counter: " + counter);
+        System.out.println("Before each test case");
     }
 
     @After
@@ -24,24 +21,18 @@ public class CalculatorServiceTest {
 
     @Test(timeout = 2000)
     public void addTwoNumbersTest() {
-        for (int i = 0; i < 20; i++) {
-            counter++;
-        }
         int result = CalculatorService.addTwoNumbers(12, 45);
         int expected = 57;
 
-        System.out.println("addTwoNumbersTest counter: " + counter);
+        System.out.println("addTwoNumbersTest");
         Assert.assertEquals(expected, result);
     }
 
     @Test
     public void sumAnyNumberTest() {
-        for (int i = 0; i < 40; i++) {
-            counter++;
-        }
         int result = CalculatorService.sumAnyNumbers(2, 7, 8, 9);
         int expectedResult = 26;
-        System.out.println("sumAnyNumberTest counter: " + counter);
+        System.out.println("sumAnyNumberTest");
         Assert.assertEquals(expectedResult, result);
     }
 
